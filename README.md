@@ -1,10 +1,18 @@
 # Fox & Geese
 
+[Play the game](https://szabadkai.github.io/fox-and-geese/) · [Deployment status](https://github.com/szabadkai/fox-and-geese/actions/workflows/pages.yml)
+
 A dependency-free browser game with a carved stone board, animated ivory and amber pieces, optional synthesized sound, three AI levels, local two-player, turn-aware undo, and legal-move highlights.
 
 ## Run
 
 `npm start` serves the game at http://localhost:4173. `npm test` runs the rules and AI checks. All deployed files are in `dist/`.
+
+## Deployment
+
+GitHub Pages serves `dist/` directly; there is no build step or dependency installation. The GitHub Actions workflow in `.github/workflows/pages.yml` checks JavaScript syntax and runs the rule/AI tests on every push and pull request. Successful pushes to `main` automatically publish the game. You can also deploy manually using **Actions → Check and deploy GitHub Pages → Run workflow**.
+
+The repository’s Pages source is **GitHub Actions**. Deployments use the built-in `GITHUB_TOKEN`; no personal access token or custom secret is required. Relative asset and worker paths support the `/fox-and-geese/` project URL.
 
 ## Rules
 
